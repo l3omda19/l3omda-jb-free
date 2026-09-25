@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" manifest="cache.appcache">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>l3omda dev</title>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #fff;
+    font: 15px/1.5 "Segoe UI", Arial, sans-serif;
+  }
+
+  body {
+    min-height: 100vh;
+  }
+
+  #brand {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    border-bottom: 1px solid #fff;
+  }
+
+  #brand-logo {
+    width: 34px;
+    height: 34px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 13px;
+    font-weight: 900;
+    color: #fff;
+  }
+
+  #brand b {
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    color: #fff;
+  }
+
+  #wrap {
+    padding: 35px 22px;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  #state {
+    font-size: 34px;
+    font-weight: 800;
+    margin: 0 0 12px;
+    color: #fff;
+    letter-spacing: .03em;
+  }
+
+  #det {
+    font-size: 15px;
+    color: #aaa;
+    margin: 0 0 8px;
+  }
+
+  #det b {
+    color: #fff;
+    font-weight: 700;
+  }
+
+  #cache {
+    font-size: 13px;
+    color: #777;
+    margin: 0 0 18px;
+    min-height: 14px;
+  }
+
+  #cache.cacheok {
+    color: #fff;
+  }
+
+  .ok {
+    color: #fff;
+  }
+
+  .bad {
+    color: #888;
+  }
+
+  .warn {
+    color: #aaa;
+  }
+
+  .line {
+    width: 100%;
+    height: 1px;
+    background: #333;
+    margin: 25px 0;
+  }
+
+  .box {
+    border: 1px solid #333;
+    background: #050505;
+    padding: 18px;
+    margin-top: 15px;
+  }
+
+  .box-title {
+    color: #fff;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .box-text {
+    color: #999;
+    font-size: 14px;
+  }
+
+  .footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #555;
+    font-size: 11px;
+    letter-spacing: .08em;
+  }
+</style>
+</head>
+
+<body>
+
+<div id="brand">
+  <div id="brand-logo">L3</div>
+  <b>l3omda dev</b>
+</div>
+
+<div id="wrap">
+
+  <div id="state">
+    l3omda dev
+  </div>
+
+  <div id="det">
+    <b>Status:</b> Running
+  </div>
+
+  <div id="det">
+    <b>Details:</b> Game loaded successfully.
+  </div>
+
+  <div id="cache">
+    <b>Cache:</b> Checking cache...
+  </div>
+
+  <div class="line"></div>
+
+  <div class="box">
+    <div class="box-title">System Status</div>
+    <div class="box-text">
+      l3omda dev system is running normally.
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="box-title">Cache</div>
+    <div class="box-text">
+      Local cached files are available.
+    </div>
+  </div>
+
+  <div class="footer">
+    © 2026 l3omda dev
+  </div>
+
+</div>
+
+<script>
+  const cache = document.getElementById("cache");
+
+  if (window.applicationCache) {
+    cache.textContent = "Cache: Available";
+    cache.classList.add("cacheok");
+  } else {
+    cache.textContent = "Cache: Not supported";
+  }
+</script>
+
+</body>
+</html>
